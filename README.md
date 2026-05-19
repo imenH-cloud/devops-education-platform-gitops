@@ -17,7 +17,7 @@ This repository contains all ArgoCD configurations for the Horizons TSA microser
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start  
 
 ### Prerequisites
 ```bash
@@ -242,7 +242,6 @@ argocd repo add https://github.com/imenH-cloud/devops-education-platform
 
 ---
 
-## 🎓 For Soutenance (Defense)
 
 **All 9 services configured in ArgoCD:**
 - ✅ Frontend ready
@@ -257,23 +256,8 @@ argocd repo add https://github.com/imenH-cloud/devops-education-platform
 
 ---
 
-## 📞 Support
-
-**Issues with old repo?** ❌ Deleted
-
-**New setup:**
-- ✅ Fresh ArgoCD configuration
-- ✅ All 9 services defined
-- ✅ Clean Git history
-- ✅ Production ready
-
 ---
 
-## 📅 Timeline
-
-- **Created:** 2026-05-19
-- **Status:** ✅ Production Ready
-- **For:** Horizons TSA Defense/Soutenance
 
 ---
 
@@ -281,6 +265,4 @@ argocd repo add https://github.com/imenH-cloud/devops-education-platform
 **Main Project:** https://github.com/imenH-cloud/devops-education-platform  
 **Docker Hub:** https://hub.docker.com/u/eline2016
 
----
-
-**Good luck with your defense! 🚀🎓**
+--
