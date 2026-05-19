@@ -1,0 +1,175 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: auth-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/auth
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gateway-backend
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/gateway
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: activity-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/activity
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: teacher-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/teacher
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: user-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/user
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: parent-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/parent
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: student-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/student
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: classroom-service
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/classroom
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5

@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: education-platform
+  namespace: argocd
+spec:
+  description: Education Platform DevOps Project
+  sourceRepos:
+  - 'https://github.com/imenH-cloud/devops-education-platform'
+  - '*'
+  destinations:
+  - namespace: 'education'
+    server: 'https://kubernetes.default.svc'
+  - namespace: 'argocd'
+    server: 'https://kubernetes.default.svc'
+  - namespace: 'monitoring'
+    server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: Namespace
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: NetworkPolicy

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gateway-backend
+  namespace: argocd
+spec:
+  project: education-platform
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: backend/gateway/kubernetes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 10

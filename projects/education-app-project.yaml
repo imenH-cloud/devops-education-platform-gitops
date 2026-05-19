@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: horizons-education
+  namespace: argocd
+spec:
+  description: Horizons TSA - Education Platform (All Microservices)
+  
+  # Allowed source repositories
+  sourceRepos:
+  - 'https://github.com/imenH-cloud/devops-education-platform'
+  - '*'
+  
+  # Allowed deployment targets
+  destinations:
+  - namespace: 'education'
+    server: 'https://kubernetes.default.svc'
+  - namespace: 'argocd'
+    server: 'https://kubernetes.default.svc'
+  - namespace: 'monitoring'
+    server: 'https://kubernetes.default.svc'
+  
+  # Cluster resources
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  
+  # Block dangerous resources
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: Namespace
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange

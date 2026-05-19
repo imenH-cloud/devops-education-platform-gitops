@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: horizons-frontend
+  namespace: argocd
+spec:
+  project: horizons-education
+  source:
+    repoURL: https://github.com/imenH-cloud/devops-education-platform
+    targetRevision: main
+    path: kubernetes/frontend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: education
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true
+  revisionHistoryLimit: 5

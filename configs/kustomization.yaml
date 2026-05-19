@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: education
+
+resources:
+  - frontend-deployment.yaml
+  - activity-service-deployment.yaml
+  - teacher-service-deployment.yaml
+  - gateway-backend-deployment.yaml
+  - postgres-deployment.yaml
+
+images:
+  - name: horizons-frontend
+    newName: imen2016/horizons-frontend
+    newTag: v1
+  - name: activity-service
+    newName: imen2016/devopspfe-activity-service
+    newTag: v1
+  - name: teacher-service
+    newName: imen2016/devopspfe-teacher-service
+    newTag: v1
+  - name: gateway-backend
+    newName: imen2016/devopspfe-gateway-backend
+    newTag: v1
